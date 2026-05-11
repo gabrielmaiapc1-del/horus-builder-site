@@ -1,11 +1,13 @@
 import { Link } from "@tanstack/react-router";
+import { Instagram } from "lucide-react";
+import logo from "@/assets/logo-hrs.png";
 
 export function SiteFooter() {
   return (
     <footer className="bg-foreground text-background/60 py-20 px-6 mt-24">
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
         <div className="md:col-span-2">
-          <div className="font-display text-3xl text-background mb-6">HRS—HORUS</div>
+          <img src={logo} alt="HRS Horus" className="h-14 w-auto mb-6 rounded-sm" />
           <p className="max-w-sm text-sm leading-relaxed mb-8">
             Elevando o padrão da construção civil brasileira através da excelência técnica
             e do design atemporal. Construtora e incorporadora com legado em obras de alto
@@ -13,16 +15,13 @@ export function SiteFooter() {
           </p>
           <div className="flex gap-3">
             <a
-              href="#"
-              className="size-10 rounded-full border border-background/10 grid place-items-center hover:bg-accent hover:border-accent transition-all text-xs"
+              href="https://www.instagram.com/hrs.construtora/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram HRS Construtora"
+              className="size-10 rounded-full border border-background/10 grid place-items-center hover:bg-accent hover:border-accent transition-all"
             >
-              In
-            </a>
-            <a
-              href="#"
-              className="size-10 rounded-full border border-background/10 grid place-items-center hover:bg-accent hover:border-accent transition-all text-xs"
-            >
-              Ig
+              <Instagram className="size-4" />
             </a>
           </div>
         </div>
