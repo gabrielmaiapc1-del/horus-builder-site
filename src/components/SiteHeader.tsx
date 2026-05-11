@@ -1,11 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo-hrs.png";
 
 const links = [
   { to: "/projetos", label: "Projetos" },
   { to: "/sobre", label: "Institucional" },
   { to: "/servicos", label: "Engenharia" },
+  { to: "/avaliacoes", label: "Avaliações" },
 ] as const;
 
 export function SiteHeader() {
@@ -14,8 +16,8 @@ export function SiteHeader() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-baseline gap-2">
-          <span className="font-display text-2xl tracking-tighter font-semibold">HRS—HORUS</span>
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="HRS Horus Construtora e Incorporadora" className="h-10 w-auto rounded-sm" />
           <span className="font-mono text-[10px] text-accent uppercase tracking-widest leading-none hidden sm:inline">
             Construtora & Incorporadora
           </span>
