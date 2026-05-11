@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-architecture.jpg";
-import projectResidencial from "@/assets/project-residencial.jpg";
-import projectCorporate from "@/assets/project-corporate.jpg";
-import valuesDetail from "@/assets/values-detail.jpg";
+import { Instagram, Star, Play } from "lucide-react";
+import projeto1 from "@/assets/projeto-1.png";
+import projeto2 from "@/assets/projeto-2.png";
+import projeto3 from "@/assets/projeto-3.png";
+import projeto4 from "@/assets/projeto-4.png";
+import projeto5 from "@/assets/projeto-5.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -59,7 +61,7 @@ function Index() {
             </div>
             <div className="lg:col-span-5 animate-fade-up [animation-delay:200ms]">
               <img
-                src={heroImg}
+                src={projeto2}
                 alt="Detalhe arquitetônico de empreendimento HRS-HORUS"
                 width={896}
                 height={1120}
@@ -89,49 +91,22 @@ function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <article className="group cursor-pointer animate-fade-up">
-              <div className="overflow-hidden mb-6 rounded-sm">
-                <img
-                  src={projectResidencial}
-                  alt="Residencial Lumina — fachada"
-                  width={1280}
-                  height={832}
-                  loading="lazy"
-                  className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="flex justify-between items-start gap-4">
-                <div>
-                  <h3 className="text-xl font-medium mb-1">Residencial Lumina</h3>
-                  <p className="text-background/40 text-sm">São Paulo, SP — 2024</p>
+            {[projeto1, projeto4].map((src, i) => (
+              <article
+                key={i}
+                className="group cursor-pointer animate-fade-up"
+                style={{ animationDelay: `${i * 100}ms` }}
+              >
+                <div className="overflow-hidden rounded-sm">
+                  <img
+                    src={src}
+                    alt="Empreendimento HRS-HORUS"
+                    loading="lazy"
+                    className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
-                <div className="font-mono text-[10px] border border-background/20 px-2 py-1 shrink-0">
-                  14.500 m²
-                </div>
-              </div>
-            </article>
-
-            <article className="group cursor-pointer animate-fade-up [animation-delay:100ms]">
-              <div className="overflow-hidden mb-6 rounded-sm">
-                <img
-                  src={projectCorporate}
-                  alt="Horus Business Center — lobby"
-                  width={1280}
-                  height={832}
-                  loading="lazy"
-                  className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="flex justify-between items-start gap-4">
-                <div>
-                  <h3 className="text-xl font-medium mb-1">Horus Business Center</h3>
-                  <p className="text-background/40 text-sm">Curitiba, PR — 2023</p>
-                </div>
-                <div className="font-mono text-[10px] border border-background/20 px-2 py-1 shrink-0">
-                  32.000 m²
-                </div>
-              </div>
-            </article>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -142,7 +117,7 @@ function Index() {
           <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
             <div className="relative">
               <img
-                src={valuesDetail}
+                src={projeto3}
                 alt="Detalhe de materiais nobres em obra HRS-HORUS"
                 width={896}
                 height={1184}
@@ -185,6 +160,117 @@ function Index() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Instagram */}
+      <section className="px-6 py-24 border-t border-border">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-6 mb-12">
+            <div>
+              <p className="font-mono text-[10px] text-accent uppercase tracking-[0.2em] mb-3">
+                @hrs.construtora
+              </p>
+              <h2 className="font-display text-4xl md:text-5xl">No Instagram</h2>
+            </div>
+            <a
+              href="https://www.instagram.com/hrs.construtora/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] border-b border-accent pb-1 text-accent hover:text-foreground transition-colors w-fit"
+            >
+              <Instagram className="size-4" /> Seguir
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            {[projeto1, projeto2, projeto3, projeto4, projeto5].map((src, i) => (
+              <a
+                key={i}
+                href="https://www.instagram.com/hrs.construtora/"
+                target="_blank"
+                rel="noreferrer"
+                className="group relative block overflow-hidden rounded-sm aspect-square"
+              >
+                <img
+                  src={src}
+                  alt={`Post Instagram HRS ${i + 1}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors grid place-items-center">
+                  {i === 2 ? (
+                    <Play className="size-8 text-background opacity-90" fill="currentColor" />
+                  ) : (
+                    <Instagram className="size-6 text-background opacity-0 group-hover:opacity-100 transition-opacity" />
+                  )}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section className="px-6 py-24 bg-muted/40 border-y border-border">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="font-mono text-[10px] text-accent uppercase tracking-[0.2em] mb-3">
+              Avaliações
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl mb-4">
+              Quem constrói com a HRS, recomenda.
+            </h2>
+            <div className="flex items-center justify-center gap-1 text-accent">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="size-5 fill-current" />
+              ))}
+              <span className="ml-3 font-mono text-xs text-muted-foreground tracking-widest uppercase">
+                4.9 / 5 · Clientes HRS
+              </span>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                n: "Camila R.",
+                r: "Atendimento impecável do início ao fim. A obra foi entregue antes do prazo e com acabamento perfeito.",
+              },
+              {
+                n: "Marcos T.",
+                r: "Equipe técnica de altíssimo nível. Recomendo a HRS para quem busca seriedade e qualidade real.",
+              },
+              {
+                n: "Juliana M.",
+                r: "Casa dos sonhos realizada. Cuidado com cada detalhe e total transparência durante todo o projeto.",
+              },
+            ].map((t) => (
+              <figure
+                key={t.n}
+                className="bg-background border border-border rounded-sm p-8 flex flex-col gap-6"
+              >
+                <div className="flex gap-1 text-accent">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="size-3.5 fill-current" />
+                  ))}
+                </div>
+                <blockquote className="text-sm leading-relaxed text-foreground/80">
+                  "{t.r}"
+                </blockquote>
+                <figcaption className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mt-auto">
+                  {t.n} — Cliente
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              to="/avaliacoes"
+              className="text-xs uppercase tracking-[0.2em] border-b border-accent pb-1 text-accent hover:text-foreground transition-colors"
+            >
+              Ver todas as avaliações
+            </Link>
           </div>
         </div>
       </section>
