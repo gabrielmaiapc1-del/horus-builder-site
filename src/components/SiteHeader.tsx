@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo-hrs.png";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const links = [
   { to: "/projetos", label: "Projetos" },
@@ -34,6 +35,7 @@ export function SiteHeader() {
               {l.label}
             </Link>
           ))}
+          <ThemeToggle />
           <Link
             to="/contato"
             className="bg-foreground text-background px-5 py-2.5 rounded-sm hover:bg-accent transition-colors"
@@ -42,13 +44,16 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 -mr-2"
-          aria-label="Menu"
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="p-2 -mr-2"
+            aria-label="Menu"
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
