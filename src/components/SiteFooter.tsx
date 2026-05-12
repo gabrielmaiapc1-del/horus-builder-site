@@ -31,10 +31,10 @@ export function SiteFooter() {
           </h5>
           <ul className="space-y-4 text-sm">
             <li>
-              São Paulo, SP
+              Chapecó, SC
               <br />
               <span className="text-xs text-background/30">
-                Av. Brigadeiro Faria Lima, 3477
+                Condá — Presidente Médici, 89801-100
               </span>
             </li>
           </ul>
@@ -44,7 +44,11 @@ export function SiteFooter() {
             Contato
           </h5>
           <ul className="space-y-4 text-sm">
-            <li>+55 11 3456-7890</li>
+            <li>
+              <a href="tel:+5549991132566" className="hover:text-accent transition-colors">
+                +55 (49) 99913-2566
+              </a>
+            </li>
             <li>contato@hrshorus.com.br</li>
             <li className="pt-4">
               <Link
