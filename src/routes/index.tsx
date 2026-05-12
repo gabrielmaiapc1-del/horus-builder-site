@@ -1,5 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram, Star, Play } from "lucide-react";
+import heroArchitecture from "@/assets/hero-architecture.jpg";
+import projectResidencial from "@/assets/project-residencial.jpg";
+import projectCorporate from "@/assets/project-corporate.jpg";
 import projeto1 from "@/assets/projeto-1.png";
 import projeto2 from "@/assets/projeto-2.png";
 import projeto3 from "@/assets/projeto-3.png";
@@ -61,7 +64,7 @@ function Index() {
             </div>
             <div className="lg:col-span-5 animate-fade-up [animation-delay:200ms]">
               <img
-                src={projeto2}
+                src={heroArchitecture}
                 alt="Detalhe arquitetônico de empreendimento HRS-HORUS"
                 width={896}
                 height={1120}
@@ -91,7 +94,7 @@ function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            {[projeto1, projeto4].map((src, i) => (
+            {[projectResidencial, projectCorporate].map((src, i) => (
               <article
                 key={i}
                 className="group cursor-pointer animate-fade-up"
