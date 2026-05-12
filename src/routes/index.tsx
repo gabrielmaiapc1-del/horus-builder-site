@@ -299,6 +299,115 @@ function Index() {
           </Link>
         </div>
       </section>
+
+      {/* Contact form + Map */}
+      <section className="px-6 pb-24" id="contato-rapido">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10">
+          <div className="bg-background border border-border rounded-sm p-8 md:p-10">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-3">
+              Fale com a HRS
+            </p>
+            <h3 className="font-display text-3xl md:text-4xl mb-2">
+              Solicite uma proposta
+            </h3>
+            <p className="text-sm text-muted-foreground mb-8">
+              Conte-nos sobre o seu projeto. Retornaremos em até 1 dia útil.
+            </p>
+            <form
+              className="space-y-5"
+              onSubmit={(e) => {
+                e.preventDefault();
+                setSent(true);
+              }}
+            >
+              <div className="grid sm:grid-cols-2 gap-5">
+                <HomeField label="Nome" name="nome" required />
+                <HomeField label="Telefone" name="telefone" type="tel" />
+              </div>
+              <HomeField label="E-mail" name="email" type="email" required />
+              <div>
+                <label className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2 block">
+                  Mensagem <span className="text-accent">*</span>
+                </label>
+                <textarea
+                  name="mensagem"
+                  required
+                  maxLength={1000}
+                  rows={4}
+                  className="w-full bg-transparent border-b border-foreground/20 focus:border-accent outline-none py-2 text-sm resize-none transition-colors"
+                />
+              </div>
+              <button
+                type="submit"
+                className="bg-foreground text-background px-6 py-3 rounded-sm text-sm uppercase tracking-wider hover:bg-accent transition-colors"
+              >
+                Enviar →
+              </button>
+              {sent && (
+                <p className="text-sm text-accent font-mono uppercase tracking-widest pt-2">
+                  ✓ Mensagem enviada.
+                </p>
+              )}
+            </form>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            <div className="rounded-sm overflow-hidden border border-border shadow-lg flex-1 min-h-[320px]">
+              <iframe
+                title="Mapa HRS-HORUS — Chapecó, SC"
+                src="https://www.google.com/maps?q=Rua+Cond%C3%A1,+Presidente+M%C3%A9dici,+Chapec%C3%B3+-+SC,+89801-100&output=embed"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="block w-full h-full min-h-[320px]"
+              />
+            </div>
+            <div className="grid sm:grid-cols-3 gap-4 text-sm">
+              <div className="flex items-start gap-3">
+                <MapPin className="size-4 text-accent mt-0.5 shrink-0" />
+                <span>Condá — Presidente Médici, Chapecó/SC</span>
+              </div>
+              <a href="tel:+5549991132566" className="flex items-start gap-3 hover:text-accent transition-colors">
+                <Phone className="size-4 text-accent mt-0.5 shrink-0" />
+                <span>(49) 99913-2566</span>
+              </a>
+              <a href="mailto:contato@hrshorus.com.br" className="flex items-start gap-3 hover:text-accent transition-colors">
+                <Mail className="size-4 text-accent mt-0.5 shrink-0" />
+                <span>contato@hrshorus.com.br</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
+  );
+}
+
+function HomeField({
+  label,
+  name,
+  type = "text",
+  required,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+}) {
+  return (
+    <div>
+      <label className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2 block">
+        {label}
+        {required && <span className="text-accent"> *</span>}
+      </label>
+      <input
+        type={type}
+        name={name}
+        required={required}
+        maxLength={150}
+        className="w-full bg-transparent border-b border-foreground/20 focus:border-accent outline-none py-2 text-sm transition-colors"
+      />
+    </div>
   );
 }
