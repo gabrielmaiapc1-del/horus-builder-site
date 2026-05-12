@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Instagram, Star, Play } from "lucide-react";
+import { Instagram, Star, Play, MapPin, Phone, Mail } from "lucide-react";
+import { useState } from "react";
 import heroArchitecture from "@/assets/hero-architecture.jpg";
 import projectResidencial from "@/assets/project-residencial.jpg";
 import projectCorporate from "@/assets/project-corporate.jpg";
