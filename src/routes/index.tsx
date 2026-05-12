@@ -31,6 +31,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [sent, setSent] = useState(false);
   return (
     <>
       {/* Hero */}
