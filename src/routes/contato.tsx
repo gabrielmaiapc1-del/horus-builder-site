@@ -44,16 +44,20 @@ function ContatoPage() {
                 Escritório
               </p>
               <p className="text-sm leading-relaxed">
-                Av. Brigadeiro Faria Lima, 3477
+                Condá — Presidente Médici
                 <br />
-                Itaim Bibi — São Paulo, SP
+                Chapecó, SC — 89801-100
               </p>
             </div>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">
                 Telefone
               </p>
-              <p className="text-sm">+55 (11) 3456-7890</p>
+              <p className="text-sm">
+                <a href="tel:+5549991132566" className="hover:text-accent transition-colors">
+                  +55 (49) 99913-2566
+                </a>
+              </p>
             </div>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-widest text-accent mb-3">
@@ -112,6 +116,26 @@ function ContatoPage() {
               </p>
             )}
           </form>
+        </div>
+      </section>
+
+      <section className="px-6 pb-24">
+        <div className="max-w-7xl mx-auto">
+          <p className="font-mono text-[10px] uppercase tracking-widest text-accent mb-4">
+            Localização
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl mb-8">Onde nos encontrar</h2>
+          <div className="rounded-sm overflow-hidden border border-border shadow-lg">
+            <iframe
+              title="Mapa HRS-HORUS — Chapecó, SC"
+              src="https://www.google.com/maps?q=Rua+Cond%C3%A1,+Presidente+M%C3%A9dici,+Chapec%C3%B3+-+SC,+89801-100&output=embed"
+              width="100%"
+              height="450"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="block w-full"
+            />
+          </div>
         </div>
       </section>
     </>
